@@ -1,0 +1,27 @@
+[tool.poetry]
+name = "myapp"
+version = "0.1.0"
+description = "Sample for Poetry + FastAPI + Uvicorn/Gunicorn"
+authors = ["Hideyuki KATO <hideyuki@kato.jp>"]
+packages = [
+    { include="myapp" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+fastapi = "^0.61.2"
+
+[tool.poetry.dev-dependencies]
+uvicorn = "^0.12.2"
+gunicorn = "^20.0.4"
+uvloop = "^0.14.0"
+httptools = "^0.1.1"
+autopep8 = "^1.5.4"
+pylint = "^2.6.0"
+
+[tool.poetry.scripts]
+serve = "myapp.server.main:run"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
